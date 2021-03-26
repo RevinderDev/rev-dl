@@ -28,6 +28,8 @@ current best practises of Python (including upcoming 3.10) and PEP 8 style. Type
 
 When it comes down to commit convention, we follow **strictly [conventional commits](https://www.conventionalcommits.org/en/v1.0.0/).**
 
+Aha - don't touch playlist folder, it's mine.
+
 ## Road map
 
 The absolute dream scenario would be to make it look like [spotify-tui](https://github.com/Rigellute/spotify-tui) which
