@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "4d4cf0a8a3791cfd40928bc33137eeaa1af0f09c57318f1e0fa390acf1087415"
+            "sha256": "1437bda07dfdac7502c65d587e1cb4a91f84214128faf76812f079c23e56cfd9"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -16,30 +16,6 @@
         ]
     },
     "default": {
-        "attrs": {
-            "hashes": [
-                "sha256:31b2eced602aa8423c2aea9c76a724617ed67cf9513173fd3a4f03e3a929c7e6",
-                "sha256:832aa3cde19744e49938b91fea06d69ecb9e649c93ba974535d08ad92164f700"
-            ],
-            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3'",
-            "version": "==20.3.0"
-        },
-        "cmd2": {
-            "hashes": [
-                "sha256:31aaeb590ec7bd2cc2cee0172099cc6f0a1396f82ab7bc389dbff23d9b90f6ec",
-                "sha256:701a8c9975c4abc45e5d13906ab149f959f812869106347323a3f89ac0e82a62"
-            ],
-            "index": "pypi",
-            "version": "==1.5.0"
-        },
-        "colorama": {
-            "hashes": [
-                "sha256:5941b2b48a20143d2267e95b1c2a7603ce057ee39fd88e7329b0c292aa16869b",
-                "sha256:9f47eda37229f68eee03b24b9748937c7dc3868f906e8ba69fbcbdd3bc5dc3e2"
-            ],
-            "markers": "python_version >= '2.7' and python_version not in '3.0, 3.1, 3.2, 3.3, 3.4'",
-            "version": "==0.4.4"
-        },
         "numpy": {
             "hashes": [
                 "sha256:032be656d89bbf786d743fee11d01ef318b0781281241997558fa7950028dd29",
@@ -70,20 +46,6 @@
             "index": "pypi",
             "version": "==1.20.1"
         },
-        "pyperclip": {
-            "hashes": [
-                "sha256:105254a8b04934f0bc84e9c24eb360a591aaf6535c9def5f29d92af107a9bf57"
-            ],
-            "version": "==1.8.2"
-        },
-        "pyreadline3": {
-            "hashes": [
-                "sha256:0003fd0079d152ecbd8111202c5a7dfa6a5569ffd65b235e45f3c2ecbee337b4",
-                "sha256:ff3b5a1ac0010d0967869f723e687d42cabc7dccf33b14934c92aa5168d260b3"
-            ],
-            "markers": "python_version >= '3.8' and sys_platform == 'win32'",
-            "version": "==3.3"
-        },
         "python-vlc": {
             "hashes": [
                 "sha256:508bc5b4b4fd72b4e23c926795bdcd38c7c1c08a4dd6b8cc87b0abd1d7118aa1",
@@ -92,20 +54,13 @@
             "index": "pypi",
             "version": "==3.0.11115"
         },
-        "wcwidth": {
-            "hashes": [
-                "sha256:beb4802a9cebb9144e99086eff703a642a13d6a0052920003a230f3294bbe784",
-                "sha256:c4d647b99872929fdb7bdcaa4fbe7f01413ed3d98077df798530e5b04f116c83"
-            ],
-            "version": "==0.2.5"
-        },
         "youtube-dl": {
             "hashes": [
-                "sha256:c287ad8dd33471aabaabab5ab1dd825bebc70eb8b83ebfa93fd71022e01a1d08",
-                "sha256:d414166efe52447877db06803816277f52f405faeee2bdf5ef816b30e352b3b8"
+                "sha256:375c19339fd6b64cb09f174c4681159a88352c5559c3453dc082020adea2980e",
+                "sha256:4e22409153a137c9b6a4e50a525cacaed7d32c0f28959505d22696bd928aaa99"
             ],
             "index": "pypi",
-            "version": "==2021.3.14"
+            "version": "==2021.3.25"
         }
     },
     "develop": {}
