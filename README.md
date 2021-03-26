@@ -59,3 +59,4 @@ seperated into seperate folders from seperate playlists.
 * make it so the NEXT song in queue is downloaded during playing of the song, so that the user doesn't have too long of a delay
 between songs.
 * resolve issue with lacking ffmpeg on a system to decode music file. (VLC throws some weird error then)
+* some kind of testing/tests would be nice lmao
