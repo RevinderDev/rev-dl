@@ -30,6 +30,13 @@ When it comes down to commit convention, we follow **strictly [conventional comm
 
 Aha - don't touch playlist folder, it's mine.
 
+## Documentation
+There's no documentation yet because well, project is small but these are VERY useful links atm:
+* [VLC Documentation](https://www.olivieraubert.net/vlc/python-ctypes/doc/)
+* [VLC Bindings](https://pypi.org/project/python-vlc/)
+* [Audio metadata](https://mutagen.readthedocs.io/en/latest/)
+* [Very legal downloader Youtube-dl](https://github.com/ytdl-org/youtube-dl)
+
 ## Road map
 
 The absolute dream scenario would be to make it look like [spotify-tui](https://github.com/Rigellute/spotify-tui) which
@@ -51,3 +58,4 @@ on top of already installing ours.
 seperated into seperate folders from seperate playlists.
 * make it so the NEXT song in queue is downloaded during playing of the song, so that the user doesn't have too long of a delay
 between songs.
+* resolve issue with lacking ffmpeg on a system to decode music file. (VLC throws some weird error then)
