@@ -45,11 +45,12 @@ is absolutely phenomenal, however one should tamper their expectations before ta
 * http://urwid.org/
 * https://github.com/pfalcon/picotui
 * https://github.com/jwlodek/py_cui
+* https://pypi.org/project/cursed/
 
 
 The big TODOs are:
 * find replacement for VLC when it comes down to playing music - we don't want users having to install 3rd party app
-on top of already installing ours.
+on top of already installing ours. Perhaps implement decoding of .mp3 files by hand for fun? Needs good sources though.
 * setup proper and clean UI that:
     * has controlls to play music by title or from a playlist file or from a folder of playlists files.
     * determine what kind of structure playlist file needs to have to be easily parsable AND human readable - eg. .json / .xml is way too much.
@@ -65,4 +66,6 @@ seperated into seperate folders from seperate playlists.
 * make it so the NEXT song in queue is downloaded during playing of the song, so that the user doesn't have too long of a delay
 between songs.
 * resolve issue with lacking ffmpeg on a system to decode music file. (VLC throws some weird error then)
-* some kind of testing/tests would be nice lmao
+* some kind of testing/tests would be nice lmao.
+* preferably find a way to move away from youtube-dl to relay on a VARIOUS different services to find songs rather than just one. 
+* IF we find good technology to use that is different than Python, feel free to mention it in discussions/issues.
