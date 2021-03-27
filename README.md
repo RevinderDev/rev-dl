@@ -40,7 +40,13 @@ There's no documentation yet because well, project is small but these are VERY u
 ## Road map
 
 The absolute dream scenario would be to make it look like [spotify-tui](https://github.com/Rigellute/spotify-tui) which
-is absolutely phenomenal, however one should tamper their expectations before taking on such a big task.
+is absolutely phenomenal, however one should tamper their expectations before taking on such a big task. Possible libraries (needs good license and modern look to it):
+* https://github.com/peterbrittain/asciimatics
+* http://urwid.org/
+* https://github.com/pfalcon/picotui
+* https://github.com/jwlodek/py_cui
+
+
 The big TODOs are:
 * find replacement for VLC when it comes down to playing music - we don't want users having to install 3rd party app
 on top of already installing ours.
