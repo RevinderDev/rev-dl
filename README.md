@@ -69,3 +69,4 @@ between songs.
 * some kind of testing/tests would be nice lmao.
 * preferably find a way to move away from youtube-dl to relay on a VARIOUS different services to find songs rather than just one. 
 * IF we find good technology to use that is different than Python, feel free to mention it in discussions/issues.
+* but preferably keep it in python
