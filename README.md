@@ -59,6 +59,7 @@ on top of already installing ours. Perhaps implement decoding of .mp3 files by h
     * shows what song is being played and for how long. maybe those fancy music graphs too - would be cool.
     * **is completely non blocking** meaning it has to work independently of music being played in the background.
     * some help strings to properly show user how to control stuff. (it's not that important before at least having workable UI).
+    * ability to INITIALIZE playlists for users, append to specific playlist and specific category. Searching when there's a duplicate in the playlist too!
 * download ONLY audio files and determine properly if those were not able to be found by youtube-dl.
 * download file ONLY if the file is not present in playlist folder. 
 * setup proper folder structure when downloading files - if the user asks for song from multiple playlist files, have files be
@@ -69,3 +70,4 @@ between songs.
 * some kind of testing/tests would be nice lmao.
 * preferably find a way to move away from youtube-dl to relay on a VARIOUS different services to find songs rather than just one. 
 * IF we find good technology to use that is different than Python, feel free to mention it in discussions/issues.
+* but preferably keep it in python
