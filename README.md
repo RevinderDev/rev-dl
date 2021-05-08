@@ -51,6 +51,7 @@ is absolutely phenomenal, however one should tamper their expectations before ta
 The big TODOs are:
 * find replacement for VLC when it comes down to playing music - we don't want users having to install 3rd party app
 on top of already installing ours. Perhaps implement decoding of .mp3 files by hand for fun? Needs good sources though.
+    * https://github.com/spatialaudio/python-sounddevice - perhaps that one?
 * setup proper and clean UI that:
     * has controlls to play music by title or from a playlist file or from a folder of playlists files.
     * determine what kind of structure playlist file needs to have to be easily parsable AND human readable - eg. .json / .xml is way too much.
