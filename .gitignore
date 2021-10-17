@@ -1,2 +1,5 @@
 .idea
 .downloads
+__pycache__/*
+music_player/__pycache__/*
+revdl/target/*
