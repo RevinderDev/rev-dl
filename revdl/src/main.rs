@@ -114,7 +114,7 @@ fn download_songs(artists: HashMap<String, Artist>, output_path: &str) -> Result
 
 fn main() {
     let matches = App::new("RevDL")
-        .version("0.1")
+        .version("0.1.0")
         .author("Michał K. <michal0kasprzyk@gmail.com>")
         .about("Download playlists using Youtube-DL and FFMpeg!")
         .arg(
