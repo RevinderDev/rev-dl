@@ -8,5 +8,5 @@ edition = "2018"
 
 [dependencies]
 subprocess = "0.2.8"
-crossterm = "0.22"
 clap = "3.0.0-beta.5"
+term-painter = "0.3.0"

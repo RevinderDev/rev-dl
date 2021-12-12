@@ -1,14 +1,14 @@
 use std::collections::HashMap;
 use std::env::{current_dir, set_current_dir};
 use std::fs::create_dir_all;
-use std::io::{self, stdout};
+use std::io;
 use std::process::Command;
 use std::time::Instant;
-use std::{fmt::Debug, fs, vec};
+use std::{fmt::Debug, fs, thread, vec};
 
 use clap::{App, Arg};
-use crossterm::execute;
-use crossterm::style::{Color, Print, ResetColor, SetForegroundColor};
+use term_painter::Color::*;
+use term_painter::ToStyle;
 
 #[derive(Debug)]
 struct Artist {
@@ -53,9 +53,12 @@ fn download_songs(artists: HashMap<String, Artist>, output_path: &str) -> Result
     let path = if output_path == "." {
         fs::canonicalize(current_dir()?)?
     } else {
+        fs::create_dir_all(output_path)
+            .expect("Issue finding specified path. Do you have rights to access given path?");
         fs::canonicalize(output_path)?
     };
-    set_current_dir(&path).expect("Couldn't find output path.");
+
+    set_current_dir(&path)?;
     for artist in artists.into_values() {
         create_dir_all(&artist.name)?;
         set_current_dir(&artist.name)?;
@@ -64,48 +67,49 @@ fn download_songs(artists: HashMap<String, Artist>, output_path: &str) -> Result
             .unwrap()
             .map(|file| String::from(file.unwrap().file_name().to_str().unwrap()))
             .collect();
+
+        let mut handles = vec![];
         for song in artist.songs {
-            execute!(
-                stdout(),
-                SetForegroundColor(Color::White),
-                Print(format!("\t🎶 Downloading '{}' 🎶\n", song)),
-                ResetColor
-            )?;
+            println!("\t🎶 Downloading '{}' 🎶", song);
 
             if let Some(found) = downloaded_songs.iter().find(|&s| {
                 (*s).to_ascii_lowercase()
                     .contains(&song.to_ascii_lowercase())
             }) {
-                // TODO: Fix these for some normal coloring calls because my god is it too much.
-                execute!(
-                    stdout(),
-                    SetForegroundColor(Color::DarkYellow),
-                    Print(format!(
+                print!(
+                    "{}",
+                    BrightYellow.paint(format!(
                         "\t⚠️Found duplicate song from file. Skipping..⚠️\n\t`{}` \n",
                         found
-                    )),
-                    ResetColor
-                )?;
+                    ))
+                );
                 continue;
             }
-            let now = Instant::now();
-            Command::new("youtube-dl")
-                .arg("--extract-audio")
-                .arg("--audio-format")
-                .arg("mp3")
-                .arg(format!("ytsearch1:{}", song))
-                .output()
-                .expect("failed to execute process");
+            // TODO: Perhaps it is bad idea to spawn as many threads as there are songs lmao.
+            let thread = thread::spawn(move || {
+                let now = Instant::now();
+                Command::new("youtube-dl")
+                    .arg("--extract-audio")
+                    .arg("--audio-format")
+                    .arg("mp3")
+                    .arg(format!("ytsearch1:{}", song))
+                    .output()
+                    .expect("failed to execute process");
 
-            execute!(
-                stdout(),
-                SetForegroundColor(Color::Green),
-                Print(format!(
-                    "\t✅ Downloaded in {}s.\n ",
-                    now.elapsed().as_secs()
-                )),
-                ResetColor
-            )?;
+                print!(
+                    "{}",
+                    Green.bold().paint(format!(
+                        "\t✅ Downloaded '{}'in {}s.\n ",
+                        song,
+                        now.elapsed().as_secs()
+                    ))
+                );
+            });
+
+            handles.push(thread);
+        }
+        for handle in handles {
+            handle.join().unwrap();
         }
         set_current_dir(&path)?;
     }
@@ -146,7 +150,10 @@ fn main() {
 
         match download_songs(artists, output_path) {
             Err(e) => println!("{:?}", e),
-            _ => println!("✨ Success! All songs downloaded! Happy listening ✨"),
+            _ => println!(
+                "{}",
+                Green.paint("✨ Success! All songs downloaded! Happy listening ✨")
+            ),
         }
     }
 }
