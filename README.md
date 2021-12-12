@@ -73,5 +73,5 @@ The big TODOs are:
 * [ ] preferably find a way to move away from youtube-dl to relay on a VARIOUS different services to find songs rather than just one. 
 * [ ] allow users to specify what site they want their song to be downloaded from..
 * [ ] allow for direct links to be downloaded IF they are still available, otherwise search again and download found. Something like:
-    * [ ] `` My Artist - My Music # link: https://www.youtube.com/watch?v=e-_SCZZlrNs ```. So first you try link, if it doesn't work then try searching title.
+    * [ ] ``My Artist - My Music # link: https://www.youtube.com/watch?v=e-_SCZZlrNs``. So first you try link, if it doesn't work then try searching title.
     * [ ] Maybe update the link if the one is not working? Or leave it up to user.
